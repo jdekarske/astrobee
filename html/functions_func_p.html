@@ -90,14 +90,12 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 &#160;
 
 <h3><a id="index_p"></a>- p -</h3><ul>
-<li>Pan()
-: <a class="el" href="classarm__sim_1_1ArmSim.html#a6d194f9fbb993902e110032a5bc0605f">arm_sim::ArmSim</a>
-</li>
 <li>pan()
 : <a class="el" href="classjsonloader_1_1ArmPanAndTiltCommand.html#ad6be5d1f22484bf5218c7d2e3329664e">jsonloader::ArmPanAndTiltCommand</a>
 </li>
 <li>params()
-: <a class="el" href="classgraph__localizer_1_1CombinedNavStateGraphValues.html#a4a84f4e2601316c9a029a6b9df6ac161">graph_localizer::CombinedNavStateGraphValues</a>
+: <a class="el" href="classcalibration_1_1CameraTargetBasedIntrinsicsCalibrator.html#a17b54a5ba52cb1f1a3cfccbc16813fa7">calibration::CameraTargetBasedIntrinsicsCalibrator&lt; DISTORTER &gt;</a>
+, <a class="el" href="classgraph__localizer_1_1CombinedNavStateGraphValues.html#a4a84f4e2601316c9a029a6b9df6ac161">graph_localizer::CombinedNavStateGraphValues</a>
 , <a class="el" href="classgraph__localizer_1_1GraphLocalizer.html#ad16143f89b5d2ac23579c89f22f903b4">graph_localizer::GraphLocalizer</a>
 , <a class="el" href="classgraph__localizer_1_1GraphLocalizerInitializer.html#aac2815b579050866d303144c1d0a64ba">graph_localizer::GraphLocalizerInitializer</a>
 , <a class="el" href="classgraph__optimizer_1_1CumulativeFactorAdder.html#ab8ee53c622d6dd01dfce3ebe71c1c2e0">graph_optimizer::CumulativeFactorAdder&lt; PARAMS &gt;</a>
@@ -154,9 +152,6 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 </li>
 <li>PerchStateCallback()
 : <a class="el" href="classexecutive_1_1Executive.html#a2366c8dc33024a2a7d1cd975598134c4">executive::Executive</a>
-</li>
-<li>PerchTfTask()
-: <a class="el" href="classmapper_1_1MapperNodelet.html#acc1d7a0ed2207db50c7966a6168c836c">mapper::MapperNodelet</a>
 </li>
 <li>PFeedbackCallback()
 : <a class="el" href="classchoreographer_1_1ChoreographerNodelet.html#a42f49f9d0ae31db985e99984ddcae16c">choreographer::ChoreographerNodelet</a>
@@ -290,8 +285,14 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 <li>PointToLineSegmentFactor()
 : <a class="el" href="classgtsam_1_1PointToLineSegmentFactor.html#aeea0b7a48992968bb4cf00bb8b02bc6b">gtsam::PointToLineSegmentFactor</a>
 </li>
+<li>PointToPlaneError()
+: <a class="el" href="classoptimization__common_1_1PointToPlaneError.html#a79402b42098be62e707a86b3813e404d">optimization_common::PointToPlaneError</a>
+</li>
 <li>PointToPlaneFactor()
 : <a class="el" href="classgtsam_1_1PointToPlaneFactor.html#abd0742eb2a69efdff79abfe093ec70c2">gtsam::PointToPlaneFactor</a>
+</li>
+<li>PointToPointError()
+: <a class="el" href="classoptimization__common_1_1PointToPointError.html#abf303bd097c6d0b16e8319eaf0d519f3">optimization_common::PointToPointError</a>
 </li>
 <li>PointToVec()
 : <a class="el" href="classtraj__opt_1_1Conversions.html#a303ed70b50cc806427b3c3c66d02f1b7">traj_opt::Conversions</a>
@@ -346,6 +347,12 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 </li>
 <li>PoseRotationFactor()
 : <a class="el" href="classgtsam_1_1PoseRotationFactor.html#adcddbe96e10a6c3b40b3d2dd46b67746">gtsam::PoseRotationFactor</a>
+</li>
+<li>PoseWithCovariance()
+: <a class="el" href="structlocalization__common_1_1PoseWithCovariance.html#ae9b10ffd89ec84274eceae3e27e8340a">localization_common::PoseWithCovariance</a>
+</li>
+<li>PoseWithCovarianceAndInliers()
+: <a class="el" href="structcalibration_1_1PoseWithCovarianceAndInliers.html#a130c7bd3f61b6ffbbe01f70f8476ed4a">calibration::PoseWithCovarianceAndInliers</a>
 </li>
 <li>position()
 : <a class="el" href="classjsonloader_1_1Station.html#aa2a4352c4e9cbf646d68457677fc0fc3">jsonloader::Station</a>
@@ -407,11 +414,15 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 : <a class="el" href="classchoreographer_1_1ChoreographerNodelet.html#a96bd36ac519f1f6b5761989e1651de9a">choreographer::ChoreographerNodelet</a>
 </li>
 <li>previous_hb()
-: <a class="el" href="classsys__monitor_1_1SysMonitor_1_1Watchdog.html#aa9de79e44af10ba714f12e40c6524a3c">sys_monitor::SysMonitor::Watchdog</a>
+: <a class="el" href="classsys__monitor_1_1SysMonitor_1_1Watchdog.html#aca9a40fe15aacc50003c14038f8791b1">sys_monitor::SysMonitor::Watchdog</a>
 </li>
 <li>PreviousTimestamp()
 : <a class="el" href="classgraph__localizer_1_1FeatureTrack.html#af1387a8117106d0f5416405ab3942240">graph_localizer::FeatureTrack</a>
 , <a class="el" href="classgraph__localizer_1_1FeatureTracker.html#ad2cfe420a3ca4d06bb356d306b3df19b">graph_localizer::FeatureTracker</a>
+</li>
+<li>Print()
+: <a class="el" href="structcalibration_1_1StateParameters.html#a7ed018c5f6db01d70428b9a20dd51718">calibration::StateParameters</a>
+, <a class="el" href="structcalibration_1_1StateParametersCovariances.html#a389ea727ac6b7431cab8c420b0e49609">calibration::StateParametersCovariances</a>
 </li>
 <li>print()
 : <a class="el" href="classgtsam_1_1LocProjectionFactor.html#a386dfc7e9599bf4a216015cf89ec1cca">gtsam::LocProjectionFactor&lt; POSE, LANDMARK, CALIBRATION &gt;</a>
@@ -471,9 +482,6 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 <li>ProcessComms()
 : <a class="el" href="classsmart__dock_1_1SmartDockNode.html#a31dfd769e6ccb82307cc125f1dae78a5">smart_dock::SmartDockNode</a>
 </li>
-<li>ProcessDdsEventLoop()
-: <a class="el" href="classw__dock_1_1WDock.html#a23958f19682ed1dbc9cf6ef6e275d17a">w_dock::WDock</a>
-</li>
 <li>ProcessErrorMsgTelemetry()
 : <a class="el" href="classperching__arm_1_1PerchingArm.html#ae8682f0c1f8f943a75e23bd702a47732">perching_arm::PerchingArm</a>
 </li>
@@ -501,9 +509,6 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 <li>profile_name()
 : <a class="el" href="classjsonloader_1_1OperatingLimits.html#ab7102dcaf4dbdbb85d1735628774cbf3">jsonloader::OperatingLimits</a>
 </li>
-<li>ProjectionError()
-: <a class="el" href="classvisualeyez_1_1ProjectionError.html#ad26f571349133972fd577256a87034d7">visualeyez::ProjectionError</a>
-</li>
 <li>ProjectionFactorAdder()
 : <a class="el" href="classgraph__localizer_1_1ProjectionFactorAdder.html#a2bb15da2d1e481c7f3e25a667ee2e9fd">graph_localizer::ProjectionFactorAdder</a>
 </li>
@@ -511,10 +516,10 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 : <a class="el" href="classgraph__localizer_1_1ProjectionGraphActionCompleter.html#a7317b2a1028c65d51ec937ffec041d37">graph_localizer::ProjectionGraphActionCompleter</a>
 </li>
 <li>ProtobufDatabase()
-: <a class="el" href="classsparse__mapping_1_1ProtobufDatabase.html#a29d2f49e23542eae824f0a5582dfba1b">sparse_mapping::ProtobufDatabase&lt; TDescriptor, F &gt;</a>
+: <a class="el" href="classsparse__mapping_1_1ProtobufDatabase.html#af5a92d8594720978db4b54b2b345db26">sparse_mapping::ProtobufDatabase&lt; TDescriptor, F &gt;</a>
 </li>
 <li>ProtobufVocabulary()
-: <a class="el" href="classsparse__mapping_1_1ProtobufVocabulary.html#ace3bda80fa34d7e6839faacd2c58b649">sparse_mapping::ProtobufVocabulary&lt; TDescriptor, F &gt;</a>
+: <a class="el" href="classsparse__mapping_1_1ProtobufVocabulary.html#a335633c06bcacc2ebee092fae313d8c7">sparse_mapping::ProtobufVocabulary&lt; TDescriptor, F &gt;</a>
 </li>
 <li>PruneMap()
 : <a class="el" href="structsparse__mapping_1_1SparseMap.html#a323d80cc4853e5b7f75e55dcb611af4d">sparse_mapping::SparseMap</a>
@@ -539,7 +544,7 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 : <a class="el" href="classgraph__localizer_1_1GraphLocalizerWrapper.html#a489c9fa9aadb7ce27e472358e99313ea">graph_localizer::GraphLocalizerWrapper</a>
 </li>
 <li>publish_msg()
-: <a class="el" href="classTrajRosBridge.html#aa3ed545820ec179e4868f71e240beff8">TrajRosBridge</a>
+: <a class="el" href="classTrajRosBridge.html#aa665e35988ade307a8e024edc1d88cbc">TrajRosBridge</a>
 </li>
 <li>PublishAgentState()
 : <a class="el" href="classexecutive_1_1Executive.html#a366ce609a2c982d580220c0b513be6d7">executive::Executive</a>
@@ -553,13 +558,9 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 <li>PublishCmdAck()
 : <a class="el" href="classexecutive_1_1Executive.html#a537affe5b895db351f15c3383bdc1958">executive::Executive</a>
 , <a class="el" href="classsmart__dock_1_1SmartDockNode.html#a21802b3d80c68302371204ecd26af1e9">smart_dock::SmartDockNode</a>
-, <a class="el" href="classw__dock_1_1WDock.html#ac3476a81618892739b3d4fe6c370dfd5">w_dock::WDock</a>
 </li>
 <li>PublishDepthImage()
 : <a class="el" href="classhandrail__detect_1_1HandrailDetect.html#acf0fdcf732fe2ed90db4d044baa6a1c4">handrail_detect::HandrailDetect</a>
-</li>
-<li>PublishDockState()
-: <a class="el" href="classw__dock_1_1WDock.html#a0d438d7357879eaa8fc880ed0c544153">w_dock::WDock</a>
 </li>
 <li>PublishFaultConfig()
 : <a class="el" href="classsys__monitor_1_1SysMonitor.html#a4b84831c4fe65999f9cd94bee2478d54">sys_monitor::SysMonitor</a>
@@ -654,7 +655,7 @@ $(document).ready(function(){initNavTree('functions_func_p.html',''); initResiza
 : <a class="el" href="classvisualization__functions_1_1Color.html#aa7a9f593bf590861c1a731253d5d87ea">visualization_functions::Color</a>
 </li>
 <li>push_back()
-: <a class="el" href="classgraph__optimizer_1_1FactorsToAdd.html#a530397ad7738aa704d86c7d112fd267f">graph_optimizer::FactorsToAdd</a>
+: <a class="el" href="classgraph__optimizer_1_1FactorsToAdd.html#a74e5e10a04d7f48353e9893c6b3ad4da">graph_optimizer::FactorsToAdd</a>
 </li>
 <li>PutObjectOnLuaStack()
 : <a class="el" href="classconfig__reader_1_1ConfigReader.html#aa41fefbe1c4ad042ac755e1f175d4e41">config_reader::ConfigReader</a>
