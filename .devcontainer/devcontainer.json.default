@@ -1,0 +1,80 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.205.2/containers/docker-existing-dockerfile
+// This file was created using guidelines from http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration
+// Uncomment sections below depending on your graphics card settings. If you are not sure, use `lspci | grep VGA`
+// Note that this is a starting point and should be modified per usecase.
+{
+	"name": "ROS devcontainer",
+	// Sets the run context to one level up instead of the .devcontainer folder.
+	"context": "..",
+	//---------
+	// Use the repository dockerfile
+	"dockerFile": "dev.dockerfile",
+	// If you want to use an image from a repo
+	// "image": "osrf/ros:melodic-desktop-full"
+	//---------
+	// Use the user so no permissions issues https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "astrobee",
+	"workspaceFolder": "/home/astrobee/catkin_ws/src/astrobee",
+	// choose which version of the image you want
+	"build": {
+		"args": {
+			"UBUNTU_VERSION": "20.04",
+			"REMOTE": "astrobee", //or "ghcr.io"
+			"ROS_VERSION": "noetic", //should match UBUNTU_VERSION
+		}
+	},
+	//---------
+	// Nvidia via nvidia-docker2
+	"runArgs": [
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
+		"--security-opt",
+		"apparmor:unconfined",
+		"--gpus",
+		"all",
+	],
+	"containerEnv": {
+		"DISPLAY": "${localEnv:DISPLAY}",
+		"QT_X11_NO_MITSHM": "1",
+		"NVIDIA_VISIBLE_DEVICES": "all",
+		"NVIDIA_DRIVER_CAPABILITIES": "all",
+		// if your rosmaster is somewhere else
+		// "ROS_MASTER_URI": "http://rosmaster:11311"
+	},
+	// Intel
+	// Before running, use command `xhost +`. See link above for the dangers of this command.
+	// "postCreateCommand": "sudo apt-get update && sudo apt-get install -y mesa-utils libgl1-mesa-dri libgl1-mesa-glx",
+	// "runArgs": [
+	// 	"--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
+	// 	"--device=/dev/dri:/dev/dri",
+	// ],
+	// "containerEnv": {
+	// 	"DISPLAY": "${localEnv:DISPLAY}",
+	// 	"QT_X11_NO_MITSHM": "1",
+	// 	// if your rosmaster is somewhere else
+	// 	// "ROS_MASTER_URI": "http://rosmaster:11311"
+	// },
+	//---------
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash"
+			},
+		},
+		"terminal.integrated.defaultProfile.linux": "bash"
+	},
+	"extensions": [
+		"ms-python.python",
+		"ms-iot.vscode-ros",
+		"ms-vscode.cpptools",
+		"redhat.vscode-yaml",
+		"redhat.vscode-xml",
+		"betwo.b2-catkin-tools"
+	],
+	// mount the folders you want in the container
+	"mounts": [
+		"source=${localWorkspaceFolder}/.devcontainer/.vscode,target=${containerWorkspaceFolder}/.vscode,type=bind",
+		"source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind",
+	],
+}

@@ -97,4 +97,7 @@ astrobee/zones/*.bin
 tags
 .ctags
 
-.vscode
+# VisualStudioCode #
+**/.vscode
+.devcontainer/**/*
+!*.default

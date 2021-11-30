@@ -1,0 +1,35 @@
+# modified from scripts/docker/astrobee.Dockerfile to add a user for development
+
+ARG UBUNTU_VERSION=16.04
+ARG REMOTE=astrobee
+FROM ${REMOTE}/astrobee:base-latest-ubuntu${UBUNTU_VERSION}
+
+ARG ROS_VERSION=kinetic
+
+COPY ./astrobee/resources /opt/astrobee/share/astrobee/resources
+
+# need to add a non-root user so bind mount permissions work correctly
+ARG USERNAME=astrobee
+RUN useradd -m $USERNAME && \
+  echo "$USERNAME:$USERNAME" | chpasswd && \
+  usermod --shell /bin/bash $USERNAME && \
+  usermod -aG sudo $USERNAME && \
+  echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME && \
+  chmod 0440 /etc/sudoers.d/$USERNAME && \
+  # Replace 1000 with your user/group id
+  usermod  --uid 1000 $USERNAME && \
+  groupmod --gid 1000 $USERNAME
+
+USER $USERNAME
+RUN mkdir -p /home/$USERNAME/catkin_ws/src
+WORKDIR /home/$USERNAME/catkin_ws/src
+# RUN echo "source /astrobee_init.sh" >> /home/$USERNAME/.bashrc
+# RUN echo "source ~/catkin_ws/devel/setup.bash" >> /home/$USERNAME/.bashrc
+
+COPY . astrobee/
+RUN . /opt/ros/${ROS_VERSION}/setup.sh \
+  && cd .. \
+  && ./src/astrobee/scripts/configure.sh -l -F -D -T -w ~/catkin_ws \
+  && CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:~/catkin_ws/src/astrobee/cmake \
+  && catkin config --append-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+  && catkin build
